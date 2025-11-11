@@ -52,7 +52,7 @@ export interface UserProps {
 }
 
 export interface UsersPageProps {
-  users: UserProps[];
+  posts: UserProps[];
 }
 
 export interface UserData {

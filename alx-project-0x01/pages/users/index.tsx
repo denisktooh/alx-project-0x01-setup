@@ -4,12 +4,12 @@ import Header from "@/components/layout/Header";
 import { UserData, UserProps, UsersPageProps } from "@/interfaces";
 import { useState } from "react";
 
-const UserPage: React.FC<UsersPageProps> = ({ users }) => {
+const Users: React.FC<UsersPageProps> = ({ posts }) => {
   const [isModalOpen, setModalOpen] = useState(false);
     const [user, setUser] = useState<UserData | null>(null);
 
   const handleAddUser = (newUser: UserData) => {
-      setUser({ ...newUser, id: users.length + 1 });
+      setUser({ ...newUser, id: posts.length + 1 });
     };
 
   return (
@@ -22,7 +22,7 @@ const UserPage: React.FC<UsersPageProps> = ({ users }) => {
             className="bg-blue-700 px-4 py-2 rounded-full text-white">Add User</button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {users?.map((user: UserProps) => (
+          {posts?.map((user: UserProps) => (
             <UserCard
               key={user.id}
               id={user.id}
@@ -57,4 +57,4 @@ export async function getStaticProps() {
   };
 }
 
-export default UserPage;
+export default Users;
