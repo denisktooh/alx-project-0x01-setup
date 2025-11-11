@@ -55,16 +55,7 @@ export interface UsersPageProps {
   posts: UserProps[];
 }
 
-export interface UserData {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
-}
-
 export interface UserModalProps {
   onClose: () => void;
-  onSubmit: (user: UserData) => void;
+  onSubmit: (post: UserProps) => void;
 }
